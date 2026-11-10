@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+body {
+  @apply bg-slate-50 text-slate-900;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+@layer components {
+  .card {
+    @apply rounded-lg border border-slate-200 bg-white p-4 shadow-sm;
+  }
+  .btn {
+    @apply inline-flex cursor-pointer items-center justify-center rounded-md bg-teal-700 px-4 py-2 text-sm font-medium text-white hover:bg-teal-800 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-secondary {
+    @apply inline-flex cursor-pointer items-center justify-center rounded-md border border-slate-300 bg-white px-3 py-1.5 text-sm font-medium text-slate-800 hover:bg-slate-100 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .input {
+    @apply w-full rounded-md border border-slate-400 bg-white px-3 py-2 text-sm;
+  }
+  .label {
+    @apply mb-1 block text-sm font-medium text-slate-800;
+  }
+  .error {
+    @apply rounded-md border border-red-300 bg-red-50 px-3 py-2 text-sm text-red-800;
+  }
+  .th {
+    @apply px-3 py-2 text-left text-xs font-semibold tracking-wide text-slate-600 uppercase;
+  }
+  .td {
+    @apply px-3 py-2 text-sm;
+  }
+}
+
+/* one visible focus ring everywhere, for keyboard users. Date inputs are listed separately:
+   Chromium's built-in calendar button takes focus inside the input, and then the input itself
+   no longer matches :focus or :focus-visible, so it would show no ring. */
+:focus-visible,
+input[type="date"]:focus-within {
+  outline: 3px solid #0f766e;
+  outline-offset: 2px;
+}

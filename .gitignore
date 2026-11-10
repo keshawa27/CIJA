@@ -1,0 +1,19 @@
+# secrets and local config
+.env
+.env.*
+!.env.example
+
+# python
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+
+# node (frontend/.gitignore covers the rest)
+node_modules/
+.next/
+test-results/
+playwright-report/
+
+# Word lock files
+~$*.docx
